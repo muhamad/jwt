@@ -38,7 +38,8 @@ namespace JWT.Algorithms
             : base(cert)
         {
         }
-        
-        protected override HashAlgorithmName HashAlgorithmName => HashAlgorithmName.SHA256;
+
+        /// <inheritdoc />
+        public override HashAlgorithmName HashAlgorithmName => HashAlgorithmName.SHA256;
     }
 }
