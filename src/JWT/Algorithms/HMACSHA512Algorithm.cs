@@ -15,6 +15,6 @@ namespace JWT.Algorithms
         }
 
         /// <inheritdoc />
-        public override HashAlgorithmNameHashAlgorithmName => HashAlgorithmName.SHA512;
+        public override HashAlgorithmName HashAlgorithmName => HashAlgorithmName.SHA512;
     }
 }
