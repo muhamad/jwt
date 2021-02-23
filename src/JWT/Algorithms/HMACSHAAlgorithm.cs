@@ -9,5 +9,8 @@ namespace JWT.Algorithms
 
         /// <inheritdoc />
         public abstract HashAlgorithmName HashAlgorithmName { get; }
+
+        /// <inheritdoc />
+        public abstract byte[] Sign(byte[] key, byte[] bytesToSign);
     }
 }
