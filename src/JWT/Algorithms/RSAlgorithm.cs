@@ -47,22 +47,9 @@ namespace JWT.Algorithms
         }
 
         /// <inheritdoc />
-        public abstract string Name { get; }
+        public virtual string Name => this.HashAlgorithmName.ToString();
 
-        public string HashAlgorithm =>
-#if NET35 || NET40
-            HashAlgorithmInternal;
-#else
-            HashAlgorithmInternal.Name;
-#endif
-
-        protected abstract
-#if NET35 || NET40
-        string
-#else
-        HashAlgorithmName
-#endif
-        HashAlgorithmInternal { get; }
+        public abstract HashAlgorithmName HashAlgorithmName { get; }
 
         /// <inheritdoc />
         public byte[] Sign(byte[] key, byte[] bytesToSign)
