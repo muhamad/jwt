@@ -37,12 +37,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-   <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+   <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net35' OR '$(TargetFramework)' == 'net40'">
-    <Reference Include="System.Security.Cryptography" />
+    <Reference Include="System.Security.Cryptography.Primitives" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.3' OR '$(TargetFramework)' == 'netstandard2.0'">
