@@ -2,7 +2,7 @@ using System.Security.Cryptography;
 
 namespace Jwt.Algorithms
 {
-    public abstract class HMACAlgorithm : IJwtAlgorithm
+    public abstract class HMACSHAAlgorithm : IJwtAlgorithm
     {
         /// <inheritdoc />
         public virtual string Name => this.HashAlgorithmName.ToString();
