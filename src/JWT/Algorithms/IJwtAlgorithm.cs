@@ -22,7 +22,7 @@ namespace JWT.Algorithms
         /// <summary>
         /// Gets name of the hashing algorithm (e.g. SHA-256/SHA-384/SHA-512).
         /// </summary>
-        HashAlgorithm HashAlgorithm { get; }
+        HashAlgorithmName HashAlgorithmName { get; }
     }
 
     /// <summary>
