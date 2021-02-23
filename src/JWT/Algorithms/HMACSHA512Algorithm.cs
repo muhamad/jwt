@@ -8,13 +8,8 @@ namespace JWT.Algorithms
     public sealed class HMACSHA512Algorithm : HMACSHAAlgorithm
     {
         /// <inheritdoc />
-        public byte[] Sign(byte[] key, byte[] bytesToSign)
-        {
-            using var sha = new HMACSHA512(key);
-            return sha.ComputeHash(bytesToSign);
-        }
-
-        /// <inheritdoc />
         public override HashAlgorithmName HashAlgorithmName => HashAlgorithmName.SHA512;
+
+        protected override HMAC CreateAlgorithm(byte[] key) => new HMACSHA512(key);
     }
 }
