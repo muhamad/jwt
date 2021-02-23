@@ -1,6 +1,6 @@
 using System.Security.Cryptography;
 
-namespace Jwt.Algorithms
+namespace JWT.Algorithms
 {
     public abstract class HMACSHAAlgorithm : IJwtAlgorithm
     {
