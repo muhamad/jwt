@@ -5,7 +5,7 @@ namespace JWT.Algorithms
     /// <summary>
     /// HMAC using SHA-512
     /// </summary>
-    public sealed class HMACSHA512Algorithm : HMACAlgorithm
+    public sealed class HMACSHA512Algorithm : HMACSHAAlgorithm
     {
         /// <inheritdoc />
         public byte[] Sign(byte[] key, byte[] bytesToSign)
