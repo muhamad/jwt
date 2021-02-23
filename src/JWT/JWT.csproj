@@ -38,6 +38,7 @@
 
   <ItemGroup>
    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+   <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net35' OR '$(TargetFramework)' == 'net40'">
@@ -50,7 +51,4 @@
     <PackageReference Include="System.Security.Cryptography.Csp" Version="4.3.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
-  </ItemGroup>
 </Project>
