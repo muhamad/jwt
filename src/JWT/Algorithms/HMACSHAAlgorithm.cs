@@ -11,6 +11,12 @@ namespace JWT.Algorithms
         public abstract HashAlgorithmName HashAlgorithmName { get; }
 
         /// <inheritdoc />
-        public abstract byte[] Sign(byte[] key, byte[] bytesToSign);
+        public byte[] Sign(byte[] key, byte[] bytesToSign)
+        {
+            using var sha = CreateAlgorithm(key);
+            return sha.ComputeHash(bytesToSign);
+        }
+
+        protected abstract HMAC CreateAlgorithm(byte[] key);
     }
 }
