@@ -20,8 +20,7 @@ namespace JWT.Tests.Algorithms
         {
             var privateKey = _fixture.Create<RSACryptoServiceProvider>();
 
-            Action action =
-                () => new RS256Algorithm(null, privateKey);
+            Action action = () => new RS256Algorithm(null, privateKey);
 
             action.Should()
                   .Throw<ArgumentNullException>("because asymmetric algorithm cannot be constructed without public key");
@@ -32,8 +31,7 @@ namespace JWT.Tests.Algorithms
         {
             var publicKey = _fixture.Create<RSACryptoServiceProvider>();
 
-            Action action =
-                () => new RS256Algorithm(publicKey, null);
+            Action action = () => new RS256Algorithm(publicKey, null);
 
             action.Should()
                   .Throw<ArgumentNullException>("because asymmetric algorithm cannot be constructed without private key");
@@ -47,8 +45,7 @@ namespace JWT.Tests.Algorithms
 
             var bytesToSign = Array.Empty<byte>();
 
-            Action action =
-                () => alg.Sign(null, bytesToSign);
+            Action action = () => alg.Sign(null, bytesToSign);
 
             action.Should()
                   .Throw<InvalidOperationException>("because asymmetric algorithm cannot sign data without private key");
