@@ -27,8 +27,8 @@ namespace JWT.Tests.Algorithms
             var publicKey = _fixture.Create<RSACryptoServiceProvider>();
             var alg = new RS384Algorithm(publicKey);
 
-            alg.HashAlgorithm.Should()
-                             .Be("SHA384");
+            alg.HashAlgorithmName.Should()
+                                 .Be("SHA384");
         }
     }
 }
