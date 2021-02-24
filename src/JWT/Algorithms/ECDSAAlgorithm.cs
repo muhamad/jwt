@@ -68,11 +68,11 @@ namespace JWT.Algorithms
         /// <param name="bytesToSign">The bytes to sign.</param>
         /// <returns>The signed bytes.</returns>
         public byte[] Sign(byte[] bytesToSign)
-            => _privateKey.SignData(bytesToSign, this.HashAlgorithm);
+            => _privateKey.SignData(bytesToSign, this.HashAlgorithmName);
 
         /// <inheritdoc />
         public bool Verify(byte[] bytesToSign, byte[] signature)
-            => _publicKey.VerifyData(bytesToSign, signature, this.HashAlgorithmName;
+            => _publicKey.VerifyData(bytesToSign, signature, this.HashAlgorithmName);
 
         private static ECDsa GetPrivateKey(X509Certificate2 cert)
         {
