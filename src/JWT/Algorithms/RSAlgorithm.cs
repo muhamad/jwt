@@ -45,7 +45,7 @@ namespace JWT.Algorithms
             _publicKey = GetPublicKey(cert) ?? throw new Exception("Certificate's PublicKey cannot be null.");
             _privateKey = GetPrivateKey(cert);
         }
-        
+
         /// <inheritdoc />
         public virtual string Name => this.HashAlgorithmName.ToString();
 
