@@ -47,11 +47,6 @@ namespace JWT.Algorithms
         }
 
         /// <inheritdoc />
-        public virtual string Name => this.HashAlgorithmName.ToString();
-
-        public abstract HashAlgorithmName HashAlgorithmName { get; }
-
-        /// <inheritdoc />
         public byte[] Sign(byte[] key, byte[] bytesToSign)
         {
             if (_privateKey is null)
