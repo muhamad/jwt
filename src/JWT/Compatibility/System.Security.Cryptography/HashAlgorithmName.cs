@@ -2,12 +2,17 @@
 namespace System.Security.Cryptography
 {	
     internal struct HashAlgorithmName	
-    {	
-        public static readonly string MD5 = nameof(MD5);
-        public static readonly string SHA1 = nameof(SHA1);
-        public static readonly string SHA256 = nameof(SHA256);
-        public static readonly string SHA384 = nameof(SHA384);
-        public static readonly string SHA512 = nameof(SHA512);
+    {
+        public HashAlgorithmName(string name) =>
+            this.Name = name;
+    
+        public string Name { get; }
+        
+        public static readonly HashAlgorithmName MD5 = new HashAlgorithmName(nameof(MD5));
+        public static readonly HashAlgorithmName SHA1 = new HashAlgorithmName(nameof(SHA1));
+        public static readonly HashAlgorithmName SHA256 = new HashAlgorithmName(nameof(SHA256));
+        public static readonly HashAlgorithmName SHA384 = new HashAlgorithmName(nameof(SHA384));
+        public static readonly HashAlgorithmName SHA512 = new HashAlgorithmName(nameof(SHA512));
     }
 }
 #endif
