@@ -1,7 +1,7 @@
 #if NET35 || NET40
 namespace System.Security.Cryptography
 {	
-    internal struct HashAlgorithmName	
+    public struct HashAlgorithmName	
     {
         public HashAlgorithmName(string name) =>
             this.Name = name;
