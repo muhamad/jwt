@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -66,26 +67,26 @@ namespace JWT.Tests.Algorithms
             alg.Should()
                .NotBeNull();
         }
-    }
     
-    private static IEnumerable<object[]> GetFactoryWithPublicKey()
-    {
-        yield return new object[] { new Func<RSA, RSAlgorithm>(publicKey => new RS256Algorithm(publicKey)) };
-        yield return new object[] { new Func<RSA, RSAlgorithm>(publicKey => new RS384Algorithm(publicKey)) };
-        yield return new object[] { new Func<RSA, RSAlgorithm>(publicKey => new RS512Algorithm(publicKey)) };
-    }
-    
-    private static IEnumerable<object[]> GetFactoryWithPublicPrivateKey()
-    {
-        yield return new object[] { new Func<RSA, RSA, RSAlgorithm>((publicKey, privateKey) => new RS256Algorithm(publicKey, privateKey)) };
-        yield return new object[] { new Func<RSA, RSA, RSAlgorithm>((publicKey, privateKey) => new RS384Algorithm(publicKey, privateKey)) };
-        yield return new object[] { new Func<RSA, RSA, RSAlgorithm>((publicKey, privateKey) => new RS512Algorithm(publicKey, privateKey)) };
-    }
-    
-    private static IEnumerable<object[]> GetFactoryWithCert()
-    {
-        yield return new object[] { new Func<X509Certificate2, RSAlgorithm>(cert => new RS256Algorithm(cert)) };
-        yield return new object[] { new Func<X509Certificate2, RSAlgorithm>(cert => new RS384Algorithm(cert)) };
-        yield return new object[] { new Func<X509Certificate2, RSAlgorithm>(cert => new RS512Algorithm(cert)) };
+        private static IEnumerable<object[]> GetFactoryWithPublicKey()
+        {
+            yield return new object[] { new Func<RSA, RSAlgorithm>(publicKey => new RS256Algorithm(publicKey)) };
+            yield return new object[] { new Func<RSA, RSAlgorithm>(publicKey => new RS384Algorithm(publicKey)) };
+            yield return new object[] { new Func<RSA, RSAlgorithm>(publicKey => new RS512Algorithm(publicKey)) };
+        }
+
+        private static IEnumerable<object[]> GetFactoryWithPublicPrivateKey()
+        {
+            yield return new object[] { new Func<RSA, RSA, RSAlgorithm>((publicKey, privateKey) => new RS256Algorithm(publicKey, privateKey)) };
+            yield return new object[] { new Func<RSA, RSA, RSAlgorithm>((publicKey, privateKey) => new RS384Algorithm(publicKey, privateKey)) };
+            yield return new object[] { new Func<RSA, RSA, RSAlgorithm>((publicKey, privateKey) => new RS512Algorithm(publicKey, privateKey)) };
+        }
+
+        private static IEnumerable<object[]> GetFactoryWithCert()
+        {
+            yield return new object[] { new Func<X509Certificate2, RSAlgorithm>(cert => new RS256Algorithm(cert)) };
+            yield return new object[] { new Func<X509Certificate2, RSAlgorithm>(cert => new RS384Algorithm(cert)) };
+            yield return new object[] { new Func<X509Certificate2, RSAlgorithm>(cert => new RS512Algorithm(cert)) };
+        }
     }
 }
