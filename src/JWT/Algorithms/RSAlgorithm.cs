@@ -47,7 +47,7 @@ namespace JWT.Algorithms
         }
         
         /// <inheritdoc />
-        public virtual string Name { get; } => this.HashAlgorithmName.ToString();
+        public virtual string Name => this.HashAlgorithmName.ToString();
 
         /// <inheritdoc />
         public abstract HashAlgorithmName HashAlgorithmName { get; }
