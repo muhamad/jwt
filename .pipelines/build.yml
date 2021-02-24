@@ -25,7 +25,7 @@ steps:
     installationPath: '$(Agent.ToolsDirectory)/dotnet'
     
 - task: UseDotNet@2
-  displayName: 'Use .NET 5.0.'
+  displayName: 'Use .NET 5.0.x'
   inputs:
     packageType: sdk
     version: '5.0.x'
