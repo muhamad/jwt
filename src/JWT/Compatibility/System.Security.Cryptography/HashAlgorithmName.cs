@@ -1,7 +1,7 @@
 #if NET35 || NET40
 namespace System.Security.Cryptography
 {	
-    internal static class HashAlgorithmName	
+    internal struct HashAlgorithmName	
     {	
         public static readonly string MD5 = nameof(MD5);
         public static readonly string SHA1 = nameof(SHA1);
